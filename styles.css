@@ -1,3 +1,95 @@
-/* Mike Jenkins */
-/* 07 MAY 20XX */
+/* Ethan lawrence */
+/* 07 MAY 2024 */
 /* Web Design Challenge */
+
+:root {
+    font-size: 20px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #222;
+    font-family: 'Open Sans', sans-serif;
+}
+/* Page Structure */
+.wrapper {
+    display: grid;
+    grid-template-rows: 125px auto auto auto 100px;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    'hdr'
+    'main'
+    'sde-1'
+    'sde-2'
+    'ftr';
+}
+
+header {
+    grid-area: hdr;
+    background: url(header-bg.jpg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    & h1 {
+        color: wheat;
+        text-align: center;
+        font-size: 3rem;
+
+        text-shadow: 0px 0px 30px white;
+    }
+}
+main {
+    grid-area: main;
+    padding: 20px;
+    background-color: #333;
+    color: lightblue;
+}
+
+.side-1 {
+    grid-area: sde-1;
+    padding: 20px;
+    background-color: #323;
+    color: lightgreen;
+}
+.side-2 {
+    grid-area: sde-2;
+    padding: 20px;
+    background-color: #233;
+    color: #ccc;
+}
+
+footer {
+    grid-area: ftr;
+    padding: 10px;
+    background-color: #332;
+    color: orange;
+}
+
+/* Content */
+p {
+    margin: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+ul {
+    list-style-type: square;
+    padding: 1.5rem;
+}
+@media (width > 768px) {
+    .wrapper {
+        height: 100vh;
+    
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr) auto;
+        grid-template-areas: 
+        'hdr    hdr    hdr'
+        'main   main   sde-1'
+        'main   main   sde-2'
+        'ftr    ftr    ftr';
+    }
+}

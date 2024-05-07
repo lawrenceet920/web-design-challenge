@@ -1,0 +1,45 @@
+/* Navigation */
+/* https://coder-coder.com/responsive-navigation-bar-flexbox-vs-css-grid/ */
+
+/* None of this code is used, this was prep for navigation */
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+
+    justify-content: center;
+    justify-items: center;
+}
+.full-width {
+    grid-column: 1 / 4;
+}
+nav {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+}
+
+@media (width > 768px) {
+    nav ul {
+        grid-template-columns: 1fr repeat(3, fit-content(50px));
+        justify-items: end;
+        grid-gap: 50px;
+    }
+    nav {
+        padding: 50px;
+    }
+    .full-width {
+        grid-column: 1 / 2;
+        justify-self: start;
+    }
+}
